@@ -13,12 +13,6 @@ class LoginView{
     function verLogin(){
         $this->smarty->display('templetes/userAdmi.tpl');
     }
-
-    function login($user){
-
-        $this->smarty->assign('login', $user);
-        $this->smarty->display('templetes/userAdmi.tpl');
-    }
     
     function mostrarHome(){
         $this->smarty->assign('home', 'Home');

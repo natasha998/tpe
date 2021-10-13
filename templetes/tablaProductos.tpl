@@ -9,8 +9,7 @@
 				<td>{{$producto->id_producto}}</td>
 				<td>
 					<a href="borrarProd/{$producto->id_producto}" id="borrarProduto" class="btn">Borrar</a>	
-					<button type="button" id="editarProd" class="btn">Editar</button>{*Es de tipo button xq necesito que muestre el form*}			
-					<button type="button" id="agregarProd" class="btn">Agregar</button>{*Es de tipo button xq necesito que muestre el form*}
+					<a href="editarProd/{$producto->id_producto}" id="editarProduto" class="btn">Editar</a>	
 				</td>
 			</tr>
 		{{/foreach}}
@@ -29,14 +28,16 @@
 		<input type="number" id="stock_prod" name="stock">
 		<label for="categoria">Categoria:</label>
 		<select name="categoria" id="categoria_prod">
-		{{foreach from=$productos item=$producto}}
-			<option value="{{$producto->id_categoria}}" name="categoria">{{$producto->id_categoria}}</option>
+		{{foreach from=$categorias item=$categoria}}
+			<option value="{{$categoria->id_categoria}}" name="categoria">{{$categoria->nombre_categoria}}</option>
 		{{/foreach}}
 			</select>
 		<input type="submit" value="Cargar Productos">
 	</form>
 </div>
 
+
+{*Si productos es vacio no deberia mostrar la funcion editar*}
 
 <div class="ocultaEditarProd">
 	<h2>Editar  Productos</h2>
@@ -51,11 +52,7 @@
 		<label for="stock">Stock</label>
 		<input type="number" id="stock_prod" name="stock">
 		<label for="categoria">Categoria:</label>
-		<select name="categoria" id="categoria_prod">
-		{{foreach from=$productos item=$producto}}
-			<option value="{{$producto->id_categoria}}" name="categoria">{{$producto->id_categoria}}</option>
-		{{/foreach}}
-			</select>
+		<input type="text" id="id_categoria" name="categoria" value="a la categoria que pertenece">
 		<input type="submit" value="Cargar Productos">
 	</form>
 </div>

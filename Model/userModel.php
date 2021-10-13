@@ -8,16 +8,16 @@ class userModel{
         $this->db = new PDO('mysql:host=localhost;'.'dbname=db_productos;charset=utf8', 'root', '');
     }
 
-    function obtenerUser($userIns){
-        $userAdmi = $this->db->prepare("SELECT * FROM user WHERE = ?");
-        $userAdmi->execute(array($userIns));
-        return $userAdmi->fetch(PDO::FETCH_OBJ);
-        // si tengo que buscar usuarios no admi tengo que cambiarle el nombre
+    
+   function registrar($nombreUsuario,$contraseña){
+    $query = $this->db->prepare('INSERT INTO user (email_user, pass_user) VALUES (? , ?)');
+    $query->execute(array($nombreUsuario,$contraseña));
+   }
+
+    function obtenerUser($user){
+        $sentencia = $this->db->prepare("SELECT * FROM user WHERE = ?");
+        $sentencia->execute(array($user));
     }
 
  
-   function registrar($userEmail,$userPassword){
-    $query = $this->db->prepare('INSERT INTO user (user, password) VALUES (? , ?)');
-    $query->execute(array($userEmail,$userPassword));
-   }
 }

@@ -1,5 +1,5 @@
 {{include file="./encabezado.tpl"}}
 
-<h2>{{$home}}</h2>
+<h2>Home:/</h2>
 
 {{include file="./footer.tpl"}}

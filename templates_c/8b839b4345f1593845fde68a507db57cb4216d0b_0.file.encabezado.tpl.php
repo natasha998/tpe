@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-12 15:54:43
+/* Smarty version 3.1.39, created on 2021-10-13 17:43:36
   from 'D:\xampp\htdocs\tpe\templetes\encabezado.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_616593a3bb0ca8_90553403',
+  'unifunc' => 'content_6166fea800cf29_90264305',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8b839b4345f1593845fde68a507db57cb4216d0b' => 
     array (
       0 => 'D:\\xampp\\htdocs\\tpe\\templetes\\encabezado.tpl',
-      1 => 1634009699,
+      1 => 1634138103,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_616593a3bb0ca8_90553403 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6166fea800cf29_90264305 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,9 +41,9 @@ function content_616593a3bb0ca8_90553403 (Smarty_Internal_Template $_smarty_tpl)
             <nav> 
                 <ul>
                     <li><a href="home">Home</a></li>
-                    <li><a href="categorias">Categorias</a>
-                                        <li><a href="productos">Productos</a></li>
-                    <li><a href="login">Login</a></li>
+                    <li><a href="categorias">Categorias</a></li>
+                    <li><a href="productos">Ver todos los productos</a></li>
+                    <li><a href="login">IniciaSesion</a></li>
                 </ul>
             </nav>
         </header>

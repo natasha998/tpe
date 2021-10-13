@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-12 15:54:51
+/* Smarty version 3.1.39, created on 2021-10-13 20:24:19
   from 'D:\xampp\htdocs\tpe\templetes\tablaCategorias.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_616593ab119145_80745324',
+  'unifunc' => 'content_61672453036270_62000113',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '882e1eb8d4338a24365e963626f351ecd64346a6' => 
     array (
       0 => 'D:\\xampp\\htdocs\\tpe\\templetes\\tablaCategorias.tpl',
-      1 => 1634045603,
+      1 => 1634149438,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_616593ab119145_80745324 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61672453036270_62000113 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:./encabezado.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 		<h2>Categorias Tabla</h2>
@@ -44,17 +44,20 @@ $_smarty_tpl->tpl_vars['categoria']->do_else = false;
 					<td>
 						<a href="borrarCat/<?php echo $_smarty_tpl->tpl_vars['categoria']->value->id_categoria;?>
 " id="borrarCategoria" class="btn">Borrar</a>	
-						<button type="button" id="editarCategoria" class="btn">Editar</button>			
-						<button type="button" id="agregarCategoria" class="btn">Agregar</button>					</td>
+						<a href="editarCat/<?php echo $_smarty_tpl->tpl_vars['categoria']->value->id_categoria;?>
+" id="editarCategoria" class="btn">Editar</a>	
+					</td>
 				</tr>
 			<?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		</table>
+		
 		<div class="formCatEditar ocultaEditar" id="formEditar">
 			<h2>Editar categorias</h2>
-					<form action="editarCat" method="POST"> 
-						<label for="categoria">editarcategoria</label>
+					<form action="editarCat/<?php echo $_smarty_tpl->tpl_vars['categoria']->value->id_categoria;?>
+" method="POST"> 
+						<label for="categoria">Editar categoria:</label>
 						<input type="text" id="nombre_c" name="nombre_c">
 						<label for="tipo_c">Tipo de categoria</label>
 						<input type="text" id="tipo_c" name="tipo_c">

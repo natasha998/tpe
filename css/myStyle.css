@@ -83,11 +83,11 @@ table td .btn{
 table td .btn:hover{
     background-color: darkcyan;
 }
-.ocultaEditar,.ocultaEditarProd{
+.ocultaEditar{
     display: none;
 }
 
-.ocultaAgregar,.ocultaAgregarProd{
+.ocultaAgregar{
     display: none;
 }
 

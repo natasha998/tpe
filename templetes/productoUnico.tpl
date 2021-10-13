@@ -1,5 +1,6 @@
 
 {{include file="./encabezado.tpl"}}
+
 <h2>{{$titulo}}</h2>
 
 <table>

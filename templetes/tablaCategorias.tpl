@@ -10,16 +10,16 @@
 
 					<td>
 						<a href="borrarCat/{$categoria->id_categoria}" id="borrarCategoria" class="btn">Borrar</a>	
-						<button type="button" id="editarCategoria" class="btn">Editar</button>{*Es de tipo button xq necesito que muestre el form*}			
-						<button type="button" id="agregarCategoria" class="btn">Agregar</button>{*Es de tipo button xq necesito que muestre el form*}
+						<a href="editarCat/{$categoria->id_categoria}" id="editarCategoria" class="btn">Editar</a>	
 					</td>
 				</tr>
 			{/foreach}
 		</table>
+		
 		<div class="formCatEditar ocultaEditar" id="formEditar">
 			<h2>Editar categorias</h2>
-					<form action="editarCat" method="POST"> 
-						<label for="categoria">editarcategoria</label>
+					<form action="editarCat/{$categoria->id_categoria}" method="POST"> 
+						<label for="categoria">Editar categoria:</label>
 						<input type="text" id="nombre_c" name="nombre_c">
 						<label for="tipo_c">Tipo de categoria</label>
 						<input type="text" id="tipo_c" name="tipo_c">

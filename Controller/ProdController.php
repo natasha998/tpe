@@ -1,4 +1,5 @@
 <?php
+require_once "./Model/CatModel.php";// necesito mostrar las categorias cuando edito el prod y cuando agrego uno nuevo
 
 require_once "./Model/ProdModel.php";
 require_once "./View/ProdView.php";
@@ -8,26 +9,31 @@ require_once "./Helpers/AuthHelper.php";
 class ProdController{
     private $ProdModel;
     private $ProdView;
+    private $CatModel;
 
     private $authHelper;
 
 
     function __construct(){
-        
         $this->ProdModel = new ProdModel();
         $this->ProdView = new ProdView();
+
+        $this->CatModel= new  CatModel();
 
         $this->authHelper = new AuthHelper();
     }
 
-       // Productos
-    function tablaProducto(){
-        $productos = $this->ProdModel->tablaProductoModel();
-        $this->ProdView->mostrarTablaCompleta($productos);
-    }
+    // Productos
 
-    function mostrarTablaProductos($id){
-        $productos = $this->ProdModel->valoresTablaProducto($id);
+    function tablaProducto(){
+        $productos = $this->ProdModel->valTablaProductos();
+        $categorias = $this->CatModel->valTablaCategorias();
+        $this->ProdView->mostrarTablaCompleta($productos,$categorias);
+    }// necesito mostrar la categoria de los productos 
+
+    function mostrarTablaProductosByCat($id){
+        
+        $productos = $this->ProdModel->valTablaProdByCat($id);
         $this->ProdView->mostrarTablaProductos($productos);
     }
     
@@ -35,7 +41,9 @@ class ProdController{
         $producto = $this->ProdModel->productoDetalle($id_p);
         $this->ProdView->verProducto($producto);
     }
-    //Productos Administrador
+
+
+    ///////////////////// Usuario Administrador//////////////////////////////////////
 
     function agregarProducto(){
         
@@ -59,8 +67,6 @@ class ProdController{
         
     } 
 
-    // Usuario administrador
-
     
     function editarProd($id){
         
@@ -82,7 +88,6 @@ class ProdController{
 
     function borrarProd($id){
 
-        
         $this->authHelper->checkLoggedIn();
         
         $this->ProdModel->eliminarProducto($id);

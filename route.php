@@ -26,12 +26,9 @@ $UserController = new UserController();
 
 // determina que camino seguir según la acción
 switch ($params[0]) {
-    case 'home': 
-       $CatController->mostrarHome();
-     break;
-     case 'about': 
-        $CatController->mostarContacto();
-      break;
+     case 'home': 
+       $CatController->mostrarTablaCategoria();
+    break;
      case 'categorias': 
         $CatController->mostrarTablaCategoria();
      break;
@@ -42,7 +39,7 @@ switch ($params[0]) {
         $ProdController->tablaProducto();
         break;
      case 'mostrarTablaProductos':
-        $ProdController->mostrarTablaProductos($params[1]);
+        $ProdController->mostrarTablaProductosByCat($params[1]);
      break;
      case 'productoUnico':
         $ProdController->verProducto($params[1]);
@@ -51,7 +48,6 @@ switch ($params[0]) {
          $CatController->editarCat($params[1]);
       break;
       case 'borrarCat':
-         echo "Si borra la categoria debe borrar todos los productos asociadas a ella";
          $CatController->borrarCat($params[1]);
       break;
       case 'agregarProducto':
@@ -67,11 +63,14 @@ switch ($params[0]) {
       case 'productoUnico':
          $ProdController->verProducto($params[1]);
       break;
+      case 'registrar':
+         $UserController->crearUsuario();
+       break;
       case 'login':
-         $UserController->login();
+         $UserController->verlogin();
        break;
      case 'confirmarLogin':
-        $UserController->verifyLogin();
+        $UserController->verificarLogin();
       break;
     default: 
         echo('404 Page not found'); 
