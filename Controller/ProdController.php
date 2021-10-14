@@ -9,6 +9,7 @@ require_once "./Helpers/AuthHelper.php";
 class ProdController{
     private $ProdModel;
     private $ProdView;
+    
     private $CatModel;
 
     private $authHelper;
@@ -39,7 +40,8 @@ class ProdController{
     
     function verProducto($id_p){
         $producto = $this->ProdModel->productoDetalle($id_p);
-        $this->ProdView->verProducto($producto);
+        $categoria = $this->CatModel->valTablaCategorias();
+        $this->ProdView->verProducto($producto,$categoria);
     }
 
 
@@ -47,7 +49,7 @@ class ProdController{
 
     function agregarProducto(){
         
-        $this->authHelper->checkLoggedIn();
+        //$this->authHelper->checkLoggedIn();
 
         if(isset($_POST["nombre"])&&(isset($_POST["marca"])&&isset($_POST["precio"])&&isset($_POST["stock"])&&isset($_POST["categoria"]))){
             if(!empty($_POST["nombre"])&&(!empty($_POST["marca"])&&!empty($_POST["precio"])&&!empty($_POST["stock"])&&!empty($_POST["categoria"]))){
@@ -70,7 +72,7 @@ class ProdController{
     
     function editarProd($id){
         
-        $this->authHelper->checkLoggedIn();
+        //$this->authHelper->checkLoggedIn();
 
             if(!empty($_POST["nombre"])&&(!empty($_POST["marca"])&&!empty($_POST["precio"])&&!empty($_POST["stock"])&&!empty($_POST["categoria"]))){
                 $nombre_p = $_POST["nombre"];
@@ -88,7 +90,7 @@ class ProdController{
 
     function borrarProd($id){
 
-        $this->authHelper->checkLoggedIn();
+       // $this->authHelper->checkLoggedIn();
         
         $this->ProdModel->eliminarProducto($id);
         header("Location: ".BASE_URL."productos"); 

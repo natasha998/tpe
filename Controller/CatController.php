@@ -34,7 +34,7 @@ class CatController{
 
     function insertarCategorias(){
         
-        $this->authHelper->checkLoggedIn();//chequeo que este iniciada la sesion
+      //  $this->authHelper->checkLoggedIn();//chequeo que este iniciada la sesion
 
         if(isset($_POST["nombre_c"])&&isset($_POST["tipo_c"])){
             if(!empty($_POST["nombre_c"])&&!empty($_POST["tipo_c"])){
@@ -54,18 +54,15 @@ class CatController{
     
     function editarCat($id){
         
-        $this->authHelper->checkLoggedIn();
-
-        if(isset($_POST["nombre_c"])&&isset($_POST["tipo_c"])){
-            if(!empty($_POST["nombre_c"])&&!empty($_POST["tipo_c"])){
-                $nombre_C = $_POST["nombre_c"];
-                $tipo_c = $_POST["tipo_c"];
+     //   $this->authHelper->checkLoggedIn();
+        if(!empty($_POST["nombre_c_ed"])&&!empty($_POST["tipo_c_ed"])){
+                $nombre_C = $_POST["nombre_c_ed"];
+                $tipo_c = $_POST["tipo_c_ed"];
          }else{
              echo "Error";
          }
-        }else{
-            echo "Error";
-        }
+
+        var_dump($nombre_C + $tipo_c);
         $this->CatModel->editarCategoria($id,$nombre_C,$tipo_c);
         $this->CatView->mostrarCategorias();
 
@@ -73,7 +70,7 @@ class CatController{
 
     function borrarCat($id){
         
-        $this->authHelper->checkLoggedIn();
+       // $this->authHelper->checkLoggedIn();
          
         $this->CatModel->borrarCategoria($id);
         $this->CatView->mostrarCategorias();

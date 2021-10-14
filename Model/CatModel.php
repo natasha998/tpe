@@ -26,7 +26,7 @@ class CatModel{
 
      function editarCategoria($id,$nombre_c,$tipo_c){
         $sentencia = $this->db->prepare("UPDATE categoria SET nombre_categoria = ?, tipo_categoria = ?  WHERE id_categoria=$id");
-        $sentencia->execute(array($id,$nombre_c,$tipo_c));
+        $sentencia->execute(array($nombre_c,$tipo_c));
      }// no funciona
 
 

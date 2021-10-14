@@ -24,9 +24,11 @@ class ProdView{
 
     }
 
-    function verProducto($producto){
+    function verProducto($producto,$categoria){
         $this->smarty->assign('titulo', "Producto Unico");
+
         $this->smarty->assign('producto',$producto);
+        $this->smarty->assign('categoria',$categoria);
 
         $this->smarty->display('templetes/productoUnico.tpl');
     }

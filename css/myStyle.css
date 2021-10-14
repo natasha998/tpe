@@ -1,5 +1,4 @@
 body{
-    background-color: rgb(196, 155, 192);
     margin: 0px 80px;
     font-family: Arial, Helvetica, sans-serif;
 
@@ -83,19 +82,20 @@ table td .btn{
 table td .btn:hover{
     background-color: darkcyan;
 }
+/* 
 .ocultaEditar{
     display: none;
 }
 
 .ocultaAgregar{
     display: none;
-}
+} */
 
 footer{
     display: flex;
     justify-content: center;
     color: cornsilk;
-    background-color: #e78db4;
+    background-color: #69585f60;
     height: 200px;
     width: 100%;
     

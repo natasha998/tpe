@@ -7,6 +7,7 @@
 		<tr>
 			<td>{{$producto->nombre_p}}</td>
 			<td>{{$producto->precio_p}}</td>
+			<td>{{$producto->id_categoria}}</td>
         </tr>
 </table>
 

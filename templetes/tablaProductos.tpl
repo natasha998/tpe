@@ -50,9 +50,7 @@
 		<label for="precio">Precio</label>
 		<input type="number" id="precio_prod" name="precio">
 		<label for="stock">Stock</label>
-		<input type="number" id="stock_prod" name="stock">
-		<label for="categoria">Categoria:</label>
-		<input type="text" id="id_categoria" name="categoria" value="a la categoria que pertenece">
+		<input type="number" id="stock_prod" name="stock">		
 		<input type="submit" value="Cargar Productos">
 	</form>
 </div>

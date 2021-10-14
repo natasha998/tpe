@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-13 20:23:23
+/* Smarty version 3.1.39, created on 2021-10-14 16:37:40
   from 'D:\xampp\htdocs\tpe\templetes\tablaProductos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6167241b4fe402_92633388',
+  'unifunc' => 'content_616840b4815123_01728638',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '010f1338fb22aa26e40394f7738ab1bf425332f4' => 
     array (
       0 => 'D:\\xampp\\htdocs\\tpe\\templetes\\tablaProductos.tpl',
-      1 => 1634149356,
+      1 => 1634222257,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./footer.tpl' => 1,
   ),
 ),false)) {
-function content_6167241b4fe402_92633388 (Smarty_Internal_Template $_smarty_tpl) {
+function content_616840b4815123_01728638 (Smarty_Internal_Template $_smarty_tpl) {
 ob_start();
 $_smarty_tpl->_subTemplateRender("file:./encabezado.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_prefixVariable1 = ob_get_clean();
@@ -130,9 +130,7 @@ echo $_prefixVariable11;?>
 		<label for="precio">Precio</label>
 		<input type="number" id="precio_prod" name="precio">
 		<label for="stock">Stock</label>
-		<input type="number" id="stock_prod" name="stock">
-		<label for="categoria">Categoria:</label>
-		<input type="text" id="id_categoria" name="categoria" value="a la categoria que pertenece">
+		<input type="number" id="stock_prod" name="stock">		
 		<input type="submit" value="Cargar Productos">
 	</form>
 </div>

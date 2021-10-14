@@ -16,7 +16,7 @@ class LoginView{
     
     function mostrarHome(){
         $this->smarty->assign('home', 'Home');
-        $this->smarty->display('templetes/home.tpl');
+        $this->smarty->display('templetes/tablaCategorias.tpl');
     }
 }
 
