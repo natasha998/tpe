@@ -4,12 +4,12 @@
 	<table>
 		{{foreach from=$productos item=$producto}}
 			<tr>
-				<td><a href="productoUnico/{$producto->id_producto}" >{{$producto->nombre_p}}</a></td>
+				<td><a href="producto-unico/{$producto->id_producto}" >{{$producto->nombre_p}}</a></td>
 				<td>{{$producto->precio_p}}</td>
 				<td>{{$producto->id_producto}}</td>
 				<td>
-					<a href="borrarProd/{$producto->id_producto}" id="borrarProduto" class="btn">Borrar</a>	
-					<a href="editarProd/{$producto->id_producto}" id="editarProduto" class="btn">Editar</a>	
+					<a href="borrar-prod/{$producto->id_producto}" id="borrarProduto" class="btn">Borrar</a>	
+					<a href="editar-prod/{$producto->id_producto}" id="editarProduto" class="btn">Editar</a>	
 				</td>
 			</tr>
 		{{/foreach}}
@@ -17,7 +17,7 @@
 
 <div class="ocultaAgregarProd">
 	<h2>Agragar Productos</h2>
-	<form action="agregarProducto" method="POST"> 
+	<form action="agregar-producto" method="POST"> 
 		<label for="producto">Nombre del producto</label>
 		<input type="text" id="nombre_prod" name="nombre">
 		<label for="marca">Marca</label>
@@ -42,7 +42,7 @@
 <div class="ocultaEditarProd">
 	<h2>Editar  Productos</h2>
 
-	<form action="editarProd/{$producto->id_producto}" method="POST"> 
+	<form action="editar-prod/{$producto->id_producto}" method="POST"> 
 		<label for="producto">Nombre del producto</label>
 		<input type="text" id="nombre_prod" name="nombre">
 		<label for="marca">Marca</label>

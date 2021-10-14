@@ -1,6 +1,7 @@
 {{include file="./encabezado.tpl"}}
   <h4>Iniciar</h4>
-        <form action="confirmarLogin" method="POST">
+        <form action="acceso" method="POST">
+        <p>{{$exito}}</p>
             <label for="user">Usuario</label>
             <input type="text" placeholder="usuario" name="userIn">
             <label for="password">Contraseña</label>
@@ -10,15 +11,13 @@
         
     <h4>Registrar</h4>
     <form action="registrar" method="POST">
+    <p>{{$error}}</p>
         <label for="user">Usuario</label>
         <input type="text" placeholder="usuario" name="user">
         <label for="password">Contraseña</label>
         <input type="password" placeholder="contraseña" name="password">
         <input type="submit" value="Registrar">
     </form>
-
-
-    <p>{{$user}}</p>
 
     {{include file="./footer.tpl"}}
 

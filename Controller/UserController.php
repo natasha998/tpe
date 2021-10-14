@@ -13,9 +13,8 @@ class UserController{
         $this->view = new LoginView();
     }
 
-    function verlogin(){
-        
-        $this->view->verLogin();
+    function showLogin(){
+        $this->view->showLogin();
     }
 
     function crearUsuario(){
@@ -23,7 +22,7 @@ class UserController{
             $userName = $_POST['user'];
             $userPassword = password_hash($_POST['password'], PASSWORD_BCRYPT);
             $this->model->registrar($userName, $userPassword);
-            $this->view->verLogin("", "Usuario registrado");
+            $this->view->showLogin("", "Usuario registrado");
         }
     }
 
@@ -33,19 +32,16 @@ class UserController{
             $userName = $_POST['userIn'];
             $passwordUser = $_POST['password'];
 
-            
-            //Usuario base de datos
             $user = $this->model->obtenerUser($userName);
-            // Si el usuario existe y las contraseñas coinciden
-            if ($user && password_verify($passwordUser, $user->pass_user)) {
+           
+            if (password_verify($passwordUser, $user->pass_user)) {
                 session_start();
                 $_SESSION["userIn"] = $user;
                 $this->view->mostrarHome();
                 var_dump("Inicio");
 
             } else {
-                $this->view->verLogin("No se pudo iniciar");
-                var_dump($user->email_pass + $user->pass_user);
+                $this->view->showLogin("","No se pudo iniciar");
                 var_dump("no inicio");
             }
 
@@ -55,6 +51,6 @@ class UserController{
     function cerrarSesion(){
         session_start();
         session_destroy();
-        $this->view->verLogin("Finalizo la sesion");
+        $this->view->showLogin("Finalizo la sesion");
     }
 }

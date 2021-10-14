@@ -10,7 +10,9 @@ class LoginView{
     }
 
 
-    function verLogin(){
+    function showLogin($error = "", $registrado = ""){
+        $this->smarty->assign('error', $error);
+        $this->smarty->assign('exito', $registrado);
         $this->smarty->display('templetes/userAdmi.tpl');
     }
     

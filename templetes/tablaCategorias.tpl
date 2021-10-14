@@ -31,7 +31,7 @@
 
 	<div>
 		<h2>Nueva categorias</h2>
-		<form action="insertarCategorias" method="POST"> 
+		<form action="inserta-categoria" method="POST"> 
 			<label for="categoria">Nombre de la categoria</label>
 			<input type="text" id="nombre_c" name="nombre_c">
 			<label for="tipo_c">Tipo de categoria</label>

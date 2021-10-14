@@ -32,44 +32,41 @@ switch ($params[0]) {
      case 'categorias': 
         $CatController->mostrarTablaCategoria();
      break;
-     case 'insertarCategorias':
+     case 'agregar-categorias':
         $CatController->insertarCategorias();
         break;
      case 'productos':
         $ProdController->tablaProducto();
         break;
-     case 'mostrarTablaProductos':
+     case 'productos-por-categoria':
         $ProdController->mostrarTablaProductosByCat($params[1]);
      break;
-     case 'productoUnico':
-        $ProdController->verProducto($params[1]);
-        break;
-      case 'editarCat':
+      case 'editar-cat':
          $CatController->editarCat($params[1]);
       break;
-      case 'borrarCat':
+      case 'borrar-cat':
          $CatController->borrarCat($params[1]);
       break;
-      case 'agregarProducto':
+      case 'agregar-producto':
          $ProdController->agregarProducto();
       break;
 
-      case 'editarProd':
+      case 'editar-prod':
          $ProdController->editarProd($params[1]);
       break;
-      case 'borrarProd':
+      case 'borrar-prod':
          $ProdController->borrarProd($params[1]);
       break;
-      case 'productoUnico':
+      case 'detalle-producto':
          $ProdController->verProducto($params[1]);
       break;
       case 'registrar':
          $UserController->crearUsuario();
        break;
       case 'login':
-         $UserController->verlogin();
+         $UserController->showLogin();
        break;
-     case 'confirmarLogin':
+     case 'acceso':
         $UserController->verificarLogin();
       break;
     default: 
